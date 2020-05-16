@@ -1,0 +1,28 @@
+<div>
+    <h1>Article</h1>
+    <div class="card " class="col-sm-6">
+        <ul class="list-group list-group-flush list-group-item">
+            <strong>Title:</strong>
+            <li class="list-group-item"><%= @article.title %></li>
+            <strong>Text:</strong>
+            <li class="list-group-item"><%= @article.text %></li>
+            <hr>
+            <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_article_path(@article) %></button> |
+            <button type="button" class="btn btn-secondary"><%= link_to 'Back', articles_path %></button>
+        </ul>
+    </div>
+</div>
+
+<div>
+    <h2>Comments</h2>
+    <div class="card" class="col-sm-6">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= render @article.comments %></li>
+        </ul>
+    </div>
+</div>
+
+<div>
+    <h2>Add a comment:</h2>
+    <%= render 'comments/form' %>
+</div>

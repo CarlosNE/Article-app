@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <%= render "layouts/header" %>
+    <div class="container">
+        <%= render "shared/flash_messages" %>
+        <%= yield %>
+    </div>
+</body>
+
+<script src="https://kit.fontawesome.com/224eedac85.js" crossorigin="anonymous"></script>
+
+</html>

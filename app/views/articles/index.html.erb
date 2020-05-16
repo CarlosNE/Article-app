@@ -1,0 +1,35 @@
+<h1>Listing Articles</h1>
+
+<button type="button" class="btn btn-outline-success"><%= link_to 'New article', new_article_path %></button>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Text</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @articles.each do |article| %>
+        <tr>
+            <td><%= article.title %></td>
+            <td><%= article.text %></td>
+            <td>
+                <i><%= link_to 'Show', article_path(article) %></i>
+                <i><%= link_to 'Edit', edit_article_path(article) %></i>
+                <i>
+                    <%= link_to 'Destroy', article_path(article),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } 
+                    %>
+                </i>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+
+</table>
+
+
+<button type="button" class="btn btn-outline-success"><%= link_to 'Home', controller: 'welcome' %></button>
